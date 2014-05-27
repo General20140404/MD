@@ -1,0 +1,133 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Markdown Parser Demo</title><link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet"></link></head><body><h2 id="-markdown-introduction-"><strong>Markdown Introduction</strong> </h2>
+<hr>
+<h4 id="-what-is-markdown-"><strong>What is Markdown?</strong></h4>
+<ul>
+<li>Markdown is a plain text formatting syntax.</li>
+<li>It can be optionally converted to <code>HTML</code> using a tool by the same name. <h4 id="-why-using-markdown-"><strong>Why using Markdown?</strong></h4>
+</li>
+<li>The goal is &quot;to write using an easy-to-read, easy-to-write plain text format, and optionally convert it to structurally valid XHTML/HTML&quot;.</li>
+<li><p>It is supported by many <em>editors</em> as plug-in and <em>sites</em>.    </p>
+<blockquote>
+<p>Editor:</p>
+<ul>
+<li>Cmd Markdown</li>
+<li>Dillinger.io</li>
+<li>notepag</li>
+<li>简书</li>
+<li>stackedit.io</li>
+<li>MarkdownPad2</li>
+</ul>
+<p>Sites:   </p>
+<ul>
+<li>GitHub</li>
+<li>Stack Overflow</li>
+<li>OpenStreetMap</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h4 id="-how-to-use-"><strong>How to use?</strong></h4>
+<ul>
+<li><p>Heading: </p>
+<blockquote>
+<p>Head
+\= = =</p>
+</blockquote>
+</li>
+<li><p>Sub-Heading</p>
+<blockquote>
+<p>Sub-heading
+- - -</p>
+</blockquote>
+</li>
+<li><p>Bold</p>
+<blockquote>
+<p>*<em>Bold*</em></p>
+</blockquote>
+</li>
+<li><p>Italic</p>
+<blockquote>
+<p>*Italic*</p>
+</blockquote>
+</li>
+<li><p>Link</p>
+<blockquote>
+<p>[google.com](www.google.com &#39;link to google&#39;)</p>
+</blockquote>
+</li>
+<li><p>Unsort List</p>
+<blockquote>
+<p>* apples
+* bananas
+* oranges</p>
+</blockquote>
+</li>
+<li><p>Sort List</p>
+<blockquote>
+<p>1. one
+2. one
+3. one</p>
+</blockquote>
+</li>
+<li><p>Blockquetos</p>
+<blockquote>
+<p>> This content contained in a blockqueto.</p>
+</blockquote>
+</li>
+<li><p>split line</p>
+<blockquote>
+<p>- - -</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="-others-"><strong>Others</strong></h4>
+<ul>
+<li><p>Markdown enhancements:</p>
+<ol>
+<li>Markdown extensions</li>
+<li>Markdown Extra</li>
+</ol>
+</li>
+<li><p>Simliar lightweight markup languages:</p>
+<ol>
+<li>AsciiDoc</li>
+<li>Setext</li>
+<li>etc.</li>
+</ol>
+</li>
+<li><p>Code</p>
+<blockquote>
+<p>`console.log(&#39;Code.&#39;)`</p>
+</blockquote>
+</li>
+</ul>
+<pre><code>var fs = require(&#39;fs&#39;);
+var marked = require(&#39;marked&#39;);
+
+fs.readFile(&#39;Markdown.md&#39;, &#39;utf8&#39;, function(err, content) {
+    console.log(&#39;load successful&#39;);
+    console.log(typeof content);
+    // console.log(marked(content));
+    var value = marked(content, function(err, content) {
+        if (err) {
+            throw err;
+        };
+        console.log(&#39;-----------compile successful.&#39;);
+        // console.log(content);
+        fs.writeFile(&#39;Markdown.html&#39;, content, function(err, content) {
+            if (err) {
+                throw err;
+            };
+            console.log(&#39;+++++++++++general Markdown.html successful.&#39;);
+        });
+    });
+    // var value = marked(&#39;I am using __markdown__.&#39;)
+    // console.log(value);
+});
+</code></pre><h4 id="-useful-website-link-"><strong>Useful website link:</strong></h4>
+<p><a href="http://daringfireball.net/projects/markdown/" title="markdown official website">Markdown</a>
+<a href="https://stackedit.io" title="one editor">stackedit.io</a>
+<a href="http://en.wikipedia.org/wiki/Markdown" title="markdown wikipedia">markdown wikipedia</a></p>
+<hr>
+<p><em>Some of content extract from <a href="http://en.wikipedia.org/wiki/Markdown" title="markdown wikipedia">WikiPedia</a>.</em></p>
+</body></html>
